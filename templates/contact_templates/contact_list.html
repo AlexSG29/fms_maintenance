@@ -5,4 +5,10 @@
 {% block content %}
 <h2>AQUI ESTAN LOS CONTACTOS</h2>
 <p>Aqui se deberian mostrar todos los contactos.</p>
+<h1>Contact List</h1>
+    <ul>
+        {% for contact in contacts %}
+        <li><a href="#">{{ contact.name }}</a></li>
+        {% endfor %}
+    </ul>
 {% endblock %}

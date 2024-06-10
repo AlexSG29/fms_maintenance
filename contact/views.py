@@ -3,11 +3,9 @@ from .models import Contact
 
 
 def contact_view(request):
-    return render(request, 'contact_templates/contact_list.html')
-
-""" def contacts_detail_view(request, contact_id):
-    contact = Contact.objects.get(pk=contact_id)
+    contacts = Contact.objects.all()
     return render(request, 
-                  'contacts_app_templates/contacts.html', 
-                  {'contact': contact}
-                  ) """
+                  'contact_templates/contact_list.html',
+                  {'contacts': contacts}
+                  )
+
