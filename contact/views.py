@@ -22,20 +22,20 @@ def contact_create_view(request):
                   {'form': form}
                   )
 
-""" def contact_update_view(request, contact_id):
+def contact_update_view(request, contact_id):
     contact = get_object_or_404(Contact, pk=contact_id)
     if request.method == 'POST':
         form = ContactForm(request.POST, instance=contact)
         if form.is_valid():
             form.save()
-            return redirect('contact_templates/contact_form.html')  
+            return redirect(contact_view)  
     else:
         form = ContactForm(instance=contact)
     return render(request, 
-                  'contact_templates/contact_form.html', 
+                  'contact_templates/contact_create.html', 
                   {'form': form}
                   )
-
+""" 
 def contact_delete_view(request, contact_id):
     contact = get_object_or_404(Contact, pk=contact_id)
     if request.method == 'POST':

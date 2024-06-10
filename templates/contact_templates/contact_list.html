@@ -6,10 +6,13 @@
 <h2>AQUI ESTAN LOS CONTACTOS</h2>
 <p>Aqui se deberian mostrar todos los contactos.</p>
 <h1>Contact List</h1>
-<a href={% url "contact_create_view" %}>Crear Contacto</a>
+<a href={% url "contact_create" %}>Crear Contacto</a>
     <ul>
         {% for contact in contacts %}
-        <li><a href="#">{{ contact.name }}</a></li>
+        <li>
+            <a href="#">{{ contact.name }}</a> - 
+            <a href="{% url 'contact_edit' contact.id %}">Edit</a>
+        </li>
         {% endfor %}
     </ul>
 {% endblock %}
