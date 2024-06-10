@@ -4,13 +4,4 @@ from .models import Contact
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = [
-            'name', 
-            'contact_type', 
-            'role', 
-            'description', 
-            'number', 
-            'email', 
-            'address', 
-            'active'
-            ]
+        fields = '__all__'
