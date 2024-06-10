@@ -18,7 +18,7 @@ def contact_create_view(request):
     else:
         form = ContactForm()
     return render(request, 
-                  'contact_templates/contact_create.html', 
+                  'contact_templates/contact_form.html', 
                   {'form': form}
                   )
 
@@ -32,16 +32,15 @@ def contact_update_view(request, contact_id):
     else:
         form = ContactForm(instance=contact)
     return render(request, 
-                  'contact_templates/contact_create.html', 
+                  'contact_templates/contact_form.html', 
                   {'form': form}
                   )
-""" 
+
 def contact_delete_view(request, contact_id):
     contact = get_object_or_404(Contact, pk=contact_id)
     if request.method == 'POST':
         contact.delete()
-        return redirect('contact_templates/contact_form.html')  
+        return redirect(contact_view)  
     return render(request, 
                   'contact_templates/contact_confirm_delete.html', 
-                  {'contact': contact}
-                  ) """
+                  {'contact': contact})

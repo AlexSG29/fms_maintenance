@@ -11,7 +11,8 @@
         {% for contact in contacts %}
         <li>
             <a href="#">{{ contact.name }}</a> - 
-            <a href="{% url 'contact_edit' contact.id %}">Edit</a>
+            <a href="{% url 'contact_edit' contact.id %}">Editar</a>
+            <a href="{% url 'contact_delete' contact.id %}">Borrar</a>
         </li>
         {% endfor %}
     </ul>
