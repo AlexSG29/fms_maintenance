@@ -6,7 +6,7 @@
 <h2>AQUI ESTAN LOS MANTENIMIENTOS</h2>
 <p>Aqui se deberian mostrar todos los MANTENIMIENTOS.</p>
 <h1>Mantenimientos Lista</h1>
-<a href="#">Crear Mantenimiento</a>
+<a href="{% url "maintenance_create" %}">Crear Mantenimiento</a>
     <ul>
         {% for maintenance in maintenances %}
         <li>
@@ -29,8 +29,8 @@
             {% endif %}
             <span>{{ maintenance.creation_date }}</span> - 
             <span>{{ maintenance.completed }}</span>
-            <a href="#">Editar</a>
-            <a href="#">Borrar</a>
+            <a href="{% url 'maintenance_edit' maintenance.id %}">Editar</a>
+            <a href="{% url 'maintenance_delete' maintenance.id %}">Borrar</a>
         </li>
         {% endfor %}
     </ul>
