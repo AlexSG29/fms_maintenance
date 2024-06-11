@@ -17,6 +17,7 @@ class Maintenance(models.Model):
     description = models.TextField(blank=True)
     parts_replaced = models.TextField(blank=True)
     completed = models.BooleanField(default=False)
+    paid = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.vehicle_plate} - {self.maintenance_type} - {self.work_order}"

@@ -28,7 +28,8 @@
                 {{ maintenance.parts_replaced }} - 
             {% endif %}
             <span>{{ maintenance.creation_date }}</span> - 
-            <span>{{ maintenance.completed }}</span>
+            <span>{{ maintenance.completed }}</span> - 
+            <span>{{ maintenance.paid }}</span>
             <a href="{% url 'maintenance_edit' maintenance.id %}">Editar</a>
             <a href="{% url 'maintenance_delete' maintenance.id %}">Borrar</a>
         </li>
