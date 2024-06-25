@@ -1,30 +1,85 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}LAYOUT{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <div>
-        <header>
-            <h1>PLANTILLA BASE</h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="{% url "dashboard" %}">Inicio</a></li>
-                <li><a href="{% url "maintenance_list" %}">Mantenimientos</a></li>
-                <li><a href="{% url "contact_list" %}">Contactos</a></li>
-            </ul>
+    <div class="dashboard">
+        <nav class="left">
+            <div class="navigation">
+                <div class="abilan">
+                    <img src="https://i.ibb.co/HgJrt1p/abilan.png" alt="Logo">
+                </div>
+                <button class="compose">Compose Mail
+                    <span class="plus">
+                        <img src="https://i.ibb.co/v1HxGWj/add-1.png" alt="Add">
+                    </span>
+                </button>
+                <div class="folders">Folders</div>
+                <div class="folder-icons">
+                    <div class="icon1">
+                        <img src="https://i.ibb.co/qdgf3TJ/envelope.png" alt="Inbox">
+                    </div>
+                    <div class="icon-name">Inbox
+                        <button class="button-span">20</button>
+                    </div>
+                </div>
+                <div class="folder-icons">
+                    <div class="icon1">
+                        <img src="https://i.ibb.co/2yLfX9W/sent-mail.png" alt="Sent Mail">
+                    </div>
+                    <div class="icon-name">Send Mail</div>
+                </div>
+                <div class="folder-icons">
+                    <div class="icon1">
+                        <img src="https://i.ibb.co/6ZH9kK3/star.png" alt="Important">
+                    </div>
+                    <div class="icon-name">Important</div>
+                </div>
+                <div class="folder-icons">
+                    <div class="icon1">
+                        <img src="https://i.ibb.co/z4QhcbD/email.png" alt="Draft">
+                    </div>
+                    <div class="icon-name">Draft</div>
+                </div>
+                <div class="folder-icons">
+                    <div class="icon1">
+                        <img src="https://i.ibb.co/3MzfGDF/bug.png" alt="Spam">
+                    </div>
+                    <div class="icon-name">Spam</div>
+                </div>
+                <div class="folder-icons">
+                    <div class="icon1">
+                        <img src="https://i.ibb.co/xfcFLCN/waste-bin.png" alt="Trash">
+                    </div>
+                    <div class="icon-name">Trash</div>
+                </div>
+            </div>
         </nav>
-        <main>
-            {% block content %}
-            {% endblock %}
+        
+        <main class="right-side">
+            <header class="right-header">
+                <div class="top-bar">
+                    <div class="top-bar-justify">
+                        <div class="big-inbox">
+                            {% block header %}{% endblock %}
+                        </div>
+                    </div>
+                    <div class="profile2">
+                        <div class="icon-name5">Larry Nunez</div>
+                    </div>
+                </div>
+                <hr class="new-hr">
+            </header>
+            
+            <section class="right-bottom">
+                {% block content %}{% endblock %}
+            </section>
         </main>
-        <footer>
-            <p>&copy; {{ fecha_actual.year }} Mi Sitio Web. Todos los derechos reservados.</p>
-        </footer>
     </div>
 </body>
 </html>

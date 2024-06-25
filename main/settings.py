@@ -122,6 +122,7 @@ USE_TZ = True
 # Define BASE_DIR
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 
 # Default primary key field type
