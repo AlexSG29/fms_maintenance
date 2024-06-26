@@ -1,85 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>{% block title %}{% endblock %}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'base/styles.css' %}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+	<title>{% block title %}{% endblock %}</title>
 </head>
-<body>
-    <div class="dashboard">
-        <nav class="left">
-            <div class="navigation">
-                <div class="abilan">
-                    <img src="https://i.ibb.co/HgJrt1p/abilan.png" alt="Logo">
-                </div>
-                <button class="compose">Compose Mail
-                    <span class="plus">
-                        <img src="https://i.ibb.co/v1HxGWj/add-1.png" alt="Add">
-                    </span>
-                </button>
-                <div class="folders">Folders</div>
-                <div class="folder-icons">
-                    <div class="icon1">
-                        <img src="https://i.ibb.co/qdgf3TJ/envelope.png" alt="Inbox">
-                    </div>
-                    <div class="icon-name">Inbox
-                        <button class="button-span">20</button>
-                    </div>
-                </div>
-                <div class="folder-icons">
-                    <div class="icon1">
-                        <img src="https://i.ibb.co/2yLfX9W/sent-mail.png" alt="Sent Mail">
-                    </div>
-                    <div class="icon-name">Send Mail</div>
-                </div>
-                <div class="folder-icons">
-                    <div class="icon1">
-                        <img src="https://i.ibb.co/6ZH9kK3/star.png" alt="Important">
-                    </div>
-                    <div class="icon-name">Important</div>
-                </div>
-                <div class="folder-icons">
-                    <div class="icon1">
-                        <img src="https://i.ibb.co/z4QhcbD/email.png" alt="Draft">
-                    </div>
-                    <div class="icon-name">Draft</div>
-                </div>
-                <div class="folder-icons">
-                    <div class="icon1">
-                        <img src="https://i.ibb.co/3MzfGDF/bug.png" alt="Spam">
-                    </div>
-                    <div class="icon-name">Spam</div>
-                </div>
-                <div class="folder-icons">
-                    <div class="icon1">
-                        <img src="https://i.ibb.co/xfcFLCN/waste-bin.png" alt="Trash">
-                    </div>
-                    <div class="icon-name">Trash</div>
-                </div>
-            </div>
-        </nav>
-        
-        <main class="right-side">
-            <header class="right-header">
-                <div class="top-bar">
-                    <div class="top-bar-justify">
-                        <div class="big-inbox">
-                            {% block header %}{% endblock %}
-                        </div>
-                    </div>
-                    <div class="profile2">
-                        <div class="icon-name5">Larry Nunez</div>
-                    </div>
-                </div>
-                <hr class="new-hr">
-            </header>
-            
-            <section class="right-bottom">
-                {% block content %}{% endblock %}
-            </section>
-        </main>
-    </div>
+<body class="block">
+
+	<header>
+		<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+				<a class="navbar-item" href={% url "dashboard" %}>
+					Logo	
+				</a>
+		
+				<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
+			</div>
+		
+			<div id="navbarBasicExample" class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item" href={% url "dashboard" %}>
+						Inicio
+					</a>
+					<a class="navbar-item" href={% url "maintenance_list" %}>
+						Mantenimientos
+					</a>
+					<a class="navbar-item" href={% url "contact_list" %}>
+						Contactos
+					</a>
+				</div>
+		
+				<div class="navbar-end">
+					<div class="navbar-item">
+						<div class="buttons">
+							<a class="button is-primary">
+								<strong>Sign up</strong>
+							</a>
+							<a class="button is-light">
+								Log in
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	
+	<main>
+
+		<section>
+			{% block header %}{% endblock header %}
+		</section>
+	{% block content %}{% endblock content %}		
+	</main>
+
+	<footer class="footer">
+		<div class="content has-text-centered">
+			<p>
+				<strong>fms-maintenance</strong> by <a href="https://github.com/AlexSG29">Alexander Sánchez</a>.
+			</p>
+		</div>
+	</footer>
+
 </body>
+
 </html>
