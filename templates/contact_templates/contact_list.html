@@ -1,6 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
+{% comment %} {% extends 'index.html' %}
 
-{% block title %}CONTACTOS{% endblock %}
+{% block title %}Contactos{% endblock %}
 
 {% block content %}
 <h2>AQUI ESTAN LOS CONTACTOS</h2>
@@ -16,4 +17,11 @@
         </li>
         {% endfor %}
     </ul>
-{% endblock %}
+{% endblock content%} {% endcomment %}
+
+
+{% block title %}Mantenimientos{% endblock title %}
+
+{% block content %}
+<h1>Contactos Lista</h1>
+{% endblock content %}
